@@ -1,4 +1,7 @@
 <script setup>
+import { createRouter, createWebHistory } from 'vue-router';
+import { ref } from 'vue';
+
 
 </script>
 
