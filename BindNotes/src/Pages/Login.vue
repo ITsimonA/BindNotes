@@ -107,10 +107,27 @@ section {
 .right .content .middle {
     font-size: 14px;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     gap: 20px;
     align-items: center;
-    width: 100%;
+    width: 52.5%;
     margin-top: 20px;
+    /* border: 1px solid red; */
+}
+.right .content .middle .remember {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.right .content button {
+    margin-top: 20px;
+    height: 40px;
+    /* padding: 10px 20px; */
+    width: 52.5%;
+    border: 1px solid slategrey;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    background: none;
 }
 </style>
