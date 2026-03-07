@@ -36,11 +36,11 @@ import bindNotesLogo from '../Assets/bindnotes_logo.png'
                     <input type="checkbox" id="remember">
                     <label for="remember">Remember me</label>
                 </div>
-                <a href="#">Forgot password?</a>
+                <a href="">Forgot password?</a>
             </div>
             <button> Sign In</button>
             <div>
-                <p>Don't have an account? <a href="#">Sign Up</a></p>
+                <p>Don't have an account? <router-link to="/signup">Sign Up</router-link></p>
             </div>
         </div>
     </section>
@@ -69,22 +69,25 @@ section {
 .Welcome-Message {
     display: flex;
     flex-direction: column;
-    font-family: var(--font-family-text); 
+    font-family: var(--font-family-text);
     position: relative;
     /* bottom: 100px; */
     align-items: center;
     /* border: 1px solid var(--text-color); */
 }
+
 .Welcome-Message h1 {
     font-size: 2rem;
     margin-bottom: 10px;
     font-weight: 300;
     color: var(--text-color);
 }
+
 .Welcome-Message p {
     font-size: 1rem;
     color: var(--text-color);
 }
+
 .Welcome-Message button {
     margin-top: 60px;
     display: flex;
@@ -141,6 +144,8 @@ section {
     padding: 10px;
     border: 1px solid var(--text-color);
     border-radius: 5px;
+    outline: none;
+    box-shadow: none;
 }
 
 .info .email {
@@ -184,7 +189,7 @@ section {
 .middle .remember input {
     width: 1rem;
     height: 1rem;
-    
+
 }
 
 .middle a {
