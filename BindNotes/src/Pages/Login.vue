@@ -1,133 +1,223 @@
 <script setup>
-import { ref } from 'vue';
+import bindNotesLogo from '../Assets/bindnotes_logo.png'
+
 
 </script>
 
-
 <template>
     <section>
-        <div class="left">
-
+        <div class="logo">
+            <img :src="bindNotesLogo" alt="BindNotes Logo">
         </div>
-        <div class="right">
-            <div class="content">
-                <div class="title">
-                    <h1>Welcome Back!</h1>
-                    <p>Please login to your account</p>
+        <div class="Welcome-Message">
+            <div class="title">
+                <h1>Welcome to BindNotes!</h1>
+                <p>Please enter your details to sign in</p>
+            </div>
+            <button>
+                <i class="fa-brands fa-google"></i> Google
+            </button>
+
+            <div class="separator">
+                <span>or</span>
+            </div>
+        </div>
+        <div class="info">
+            <div class="email">
+                <p>Email Address</p>
+                <input type="email" id="email" placeholder="Enter your email">
+            </div>
+            <div class="password">
+                <p>Password</p>
+                <input type="password" id="password" placeholder="Enter your password">
+            </div>
+            <div class="middle">
+                <div class="remember">
+                    <input type="checkbox" id="remember">
+                    <label for="remember">Remember me</label>
                 </div>
-                <div class="input">
-                    <div class="Email">
-                        <p class="label">Email Addres</p>
-                        <input class="info" type="email" placeholder="Enter your email" />
-                    </div>
-                    <div class="password">
-                        <p class="label">Password</p>
-                        <input class="info" type="password" placeholder="Enter your password" />
-                    </div>
-                </div>
-                <div class="middle">
-                        <div class="remember">
-                            <input type="checkbox" id="remember" />
-                            <label for="remember">Remember me</label>
-                        </div>
-                        <div class="forgot">
-                            <a href="#">Forgot password?</a>
-                        </div>
-                    </div>
-                    <button>Login</button>
+                <a href="#">Forgot password?</a>
+            </div>
+            <button> Sign In</button>
+            <div>
+                <p>Don't have an account? <a href="#">Sign Up</a></p>
             </div>
         </div>
     </section>
 </template>
 
 
-
-
 <style scoped>
-
+/************************************************ Section ****************************************************/
 section {
     height: 100vh;
     width: 100%;
     display: grid;
-    grid-template-columns: 1.5fr 1fr;
-    border: 1px solid red;
+    grid-template-columns: 1fr;
+    grid-template-rows: 200px 200px 1fr;
+    row-gap: 20px;
+
 }
 
-.left {
-    background-color: #f0f0f0;
-}
+/************************************************ Section ****************************************************/
 
-.right {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-family: var(--primary-font);
-}
-.right .content .title {
-    position: relative;
-    bottom: 50px;
+/************************************************ Welcome ****************************************************/
+.Welcome-Message .title {
     text-align: center;
-    margin-bottom: 20px;
 }
 
-
-.right .content {
+.Welcome-Message {
     display: flex;
     flex-direction: column;
+    font-family: var(--font-family-text); 
+    position: relative;
+    /* bottom: 100px; */
     align-items: center;
-    justify-content: center;
-    border: 1px solid #ccc;
-    width: 80%;
-    height: 80%;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    /* border: 1px solid var(--text-color); */
 }
-.right .content .input {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    
-}
-.right .content .input .label {
-    font-size: 14px;
+.Welcome-Message h1 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    font-weight: 300;
     color: var(--text-color);
-    font-weight: 500;
 }
-
-
-.right .content .input .info {
-    width: 20rem;
-    padding: 10px;
-    margin-top: 5px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-
+.Welcome-Message p {
+    font-size: 1rem;
+    color: var(--text-color);
 }
-
-.right .content .middle {
-    font-size: 14px;
+.Welcome-Message button {
+    margin-top: 60px;
     display: flex;
-    justify-content: space-between;
+    width: 28rem;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 20px;
+    border: 1px solid var(--text-color);
+    font-size: 16px;
+    border-radius: 5px;
+    background: none;
+    cursor: pointer;
+}
+
+.separator {
+    width: min(100%, 28rem);
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: var(--text-color);
+    font-size: 0.9rem;
+    margin: 0.75rem 0;
+}
+
+.separator::before,
+.separator::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background-color: var(--text-color);
+}
+
+.separator span {
+    line-height: 1;
+    text-transform: lowercase;
+}
+
+/************************************************ Welcome ****************************************************/
+
+
+/************************************************ Info Area ****************************************************/
+.info {
+    /* border: 1px solid var(--text-color); */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: var(--font-family-text);
     gap: 20px;
-    align-items: center;
-    width: 52.5%;
-    margin-top: 20px;
-    /* border: 1px solid red; */
 }
-.right .content .middle .remember {
+
+.info input {
+    width: 28rem;
+    padding: 10px;
+    border: 1px solid var(--text-color);
+    border-radius: 5px;
+}
+
+.info .email {
     display: flex;
-    align-items: center;
+    flex-direction: column;
     gap: 5px;
 }
-.right .content button {
-    margin-top: 20px;
-    height: 40px;
-    /* padding: 10px 20px; */
-    width: 52.5%;
-    border: 1px solid slategrey;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 14px;
+
+.info .password {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.logo {
+    display: grid;
+    place-items: center;
+}
+
+/*********************************************** Info Area *******************************************************/
+
+
+
+/************************************************ Middle ****************************************************/
+
+
+.middle {
+    display: flex;
+    width: min(100%, 28rem);
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.95rem;
+}
+
+.middle .remember {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.middle .remember input {
+    width: 1rem;
+    height: 1rem;
+    
+}
+
+.middle a {
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+.middle a:hover {
+    text-decoration: underline;
+}
+
+.info button {
+    width: 28rem;
+    padding: 10px 20px;
+    border: 1px solid var(--text-color);
+    font-size: 16px;
+    border-radius: 5px;
     background: none;
+    cursor: pointer;
+}
+
+
+/************************************************ Middle ****************************************************/
+
+
+
+
+img {
+    width: 400px;
+    object-fit: contain;
+    height: auto;
+    position: relative;
+    bottom: 80px;
+    /* border: 1px solid black; */
 }
 </style>
